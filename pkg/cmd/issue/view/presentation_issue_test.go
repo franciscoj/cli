@@ -230,6 +230,7 @@ func Test_stringifyAndColorizeLabels(t *testing.T) {
 			ios.SetStdinTTY(true)
 			ios.SetStderrTTY(true)
 			ios.SetColorEnabled(tc.isColorSchemeEnabled)
+			ios.SetColorLabels(true)
 
 			assert.Equal(t, stringifyAndColorizeLabels(tc.labels, ios.ColorScheme()), tc.expected)
 		})

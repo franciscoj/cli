@@ -107,7 +107,7 @@ func stringifyAndColorizeLabels(issueLabels api.Labels, colorScheme *iostreams.C
 		if colorScheme == nil {
 			labelNames[j] = label.Name
 		} else {
-			labelNames[j] = colorScheme.HexToRGB(label.Color, label.Name)
+			labelNames[j] = colorScheme.Label(label.Color, label.Name)
 		}
 	}
 

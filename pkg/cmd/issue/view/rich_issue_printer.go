@@ -114,7 +114,7 @@ func (p *RichIssuePrinter) body(pi PresentationIssue) error {
 	var err error
 	body := pi.Body
 	if body == "" {
-		md = fmt.Sprintf("\n  %s\n\n", p.IO.ColorScheme().Gray("No description provided"))
+		md = fmt.Sprintf("\n  %s\n\n", p.IO.ColorScheme().Muted("No description provided"))
 	} else {
 		md, err = markdown.Render(body,
 			markdown.WithTheme(p.IO.TerminalTheme()),
@@ -139,5 +139,5 @@ func (p *RichIssuePrinter) comments(pi PresentationIssue, isPreview bool) error 
 }
 
 func (p *RichIssuePrinter) footer(pi PresentationIssue) {
-	fmt.Fprintf(p.IO.Out, p.IO.ColorScheme().Gray("View this issue on GitHub: %s\n"), pi.URL)
+	fmt.Fprintf(p.IO.Out, p.IO.ColorScheme().Muted("View this issue on GitHub: %s\n"), pi.URL)
 }
